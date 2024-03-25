@@ -1,40 +1,57 @@
+# lib/cli.py
 
-from helpers import (
-    exit_program,
-    list_departments,
-    find_department_by_name,
-    find_department_by_id,
-    create_department,
-    update_department,
-    delete_department,
+import sys
+from lib.helpers import (
     list_employees,
     find_employee_by_name,
     find_employee_by_id,
     create_employee,
     update_employee,
     delete_employee,
-    list_department_employees
+    list_department_employees  # Add this import if you have implemented this function
 )
-
 
 def main():
     while True:
-        menu()
+        print("""
+        Please select an option:
+        0. Exit the program
+        1. List all departments
+        2. Find department by name
+        3. Find department by id
+        4: Create department
+        5: Update department
+        6: Delete department
+        7. List all employees
+        8. Find employee by name
+        9. Find employee by id
+        10: Create employee
+        11: Update employee
+        12: Delete employee
+        13. List all employees in a department
+        """)
         choice = input("> ")
+
         if choice == "0":
-            exit_program()
+            sys.exit()
         elif choice == "1":
-            list_departments()
+            # Call ORM methods related to Department class
+            pass
         elif choice == "2":
-            find_department_by_name()
+            # Call ORM methods related to Department class
+            pass
         elif choice == "3":
-            find_department_by_id()
+            # Call ORM methods related to Department class
+            pass
         elif choice == "4":
-            create_department()
+            # Call ORM methods related to Department class
+            pass
         elif choice == "5":
-            update_department()
+            # Call ORM methods related to Department class
+            pass
         elif choice == "6":
-            delete_department()
+            # Call ORM methods related to Department class
+            pass
         elif choice == "7":
             list_employees()
         elif choice == "8":
@@ -50,26 +67,7 @@ def main():
         elif choice == "13":
             list_department_employees()
         else:
-            print("Invalid choice")
-
-
-def menu():
-    print("Please select an option:")
-    print("0. Exit the program")
-    print("1. List all departments")
-    print("2. Find department by name")
-    print("3. Find department by id")
-    print("4: Create department")
-    print("5: Update department")
-    print("6: Delete department")
-    print("7. List all employees")
-    print("8. Find employee by name")
-    print("9. Find employee by id")
-    print("10: Create employee")
-    print("11: Update employee")
-    print("12: Delete employee")
-    print("13: List all employees in a department")
-
+            print("Invalid choice. Please select a valid option.")
 
 if __name__ == "__main__":
     main()
